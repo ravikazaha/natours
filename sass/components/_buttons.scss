@@ -1,6 +1,7 @@
 @use "../abstracts/variables" as *;
 
 .btn {
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -11,9 +12,13 @@
     transition: all 0.3s;
     position: relative;
     font-size: 1.6rem;
+
+    border: none;
+    cursor: pointer;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     transform: translateY(-0.3rem);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
     &::after {
@@ -22,7 +27,8 @@
     }
   }
 
-  &:active {
+  &:active,
+  &:focus {
     transform: translateY(-0.1rem);
     box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.1);
   }
